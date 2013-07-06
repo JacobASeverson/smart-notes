@@ -42,3 +42,9 @@
 # other
 *.iws
 
+.idea
+*.iml
+*.ipr
+*.iws
+.DS_Store
+
