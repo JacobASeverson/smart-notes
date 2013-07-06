@@ -95,3 +95,4 @@ grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.objectpartne
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.objectpartners.security.UserRole'
 grails.plugins.springsecurity.authority.className = 'com.objectpartners.security.Role'
 grails.plugins.springsecurity.auth.loginFormUrl = '/login/mathLogin'
+grails.plugins.springsecurity.providernames = ['MathAuthenticationProvider']
