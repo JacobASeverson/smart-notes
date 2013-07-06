@@ -10,10 +10,10 @@ import javax.servlet.ServletResponse
 /**
  *
  */
-class MathAuthenticationFilter extends GenericFilterBean{
+class MathAuthenticationFilter extends GenericFilterBean {
     @Override
     void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException,
                                                                                               ServletException {
-        //To change body of implemented methods use File | Settings | File Templates.
+
     }
 }
