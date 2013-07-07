@@ -4,9 +4,12 @@ import org.springframework.transaction.annotation.Transactional
 
 class QuestionService {
 
+    /**
+     * Retrieve a random Question instance.
+     * @return
+     */
     @Transactional(readOnly = true)
     def generateQuestion() {
-        Integer questionTotal = Question.count()
-        return Question.get(Math.abs(new Random().nextInt() % questionTotal + 1))
+        return Question.get(Math.abs(new Random().nextInt(Question.count()) + 1))
     }
 }
