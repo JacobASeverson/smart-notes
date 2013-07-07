@@ -1,3 +1,5 @@
+package com.objectpartners.security
+
 import com.objectpartners.security.QuestionService
 import grails.converters.JSON
 
