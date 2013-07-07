@@ -3,46 +3,45 @@ package com.objectpartners.security
 import org.springframework.security.core.Authentication
 import org.springframework.security.core.CredentialsContainer
 import org.springframework.security.core.GrantedAuthority
+import org.springframework.security.core.authority.GrantedAuthorityImpl
 
 class MathAuthenticationToken implements Authentication, CredentialsContainer {
 
-    @Override
-    Collection<GrantedAuthority> getAuthorities() {
-        return null  //To change body of implemented methods use File | Settings | File Templates.
-    }
+    Object credentials
+    Object questionId
+    Object principal
+    Object details
+    Collection<GrantedAuthority> authorities = []
+    Boolean authenticated = false
 
-    @Override
-    Object getCredentials() {
-        return null  //To change body of implemented methods use File | Settings | File Templates.
-    }
+    static final LOGGED_IN_USER_NAME = 'Fellow Scientist'
 
-    @Override
-    Object getDetails() {
-        return null  //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    @Override
-    Object getPrincipal() {
-        return null  //To change body of implemented methods use File | Settings | File Templates.
+    public MathAuthenticationToken(String questionId,
+                                   String guess) {
+        this.questionId = questionId
+        this.credentials = guess
+        this.authorities << new GrantedAuthorityImpl('ROLE_USER')
     }
 
     @Override
     boolean isAuthenticated() {
-        return false  //To change body of implemented methods use File | Settings | File Templates.
+        return authenticated
     }
 
     @Override
-    void setAuthenticated(boolean b) throws IllegalArgumentException {
-        //To change body of implemented methods use File | Settings | File Templates.
+    void setAuthenticated(boolean authenticated) throws IllegalArgumentException {
+        this.authenticated = authenticated
     }
 
     @Override
     String getName() {
-        return null  //To change body of implemented methods use File | Settings | File Templates.
+        return LOGGED_IN_USER_NAME
     }
 
     @Override
     void eraseCredentials() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        if (this.credentials instanceof CredentialsContainer) {
+            ((CredentialsContainer)this.credentials).eraseCredentials();
+        }
     }
 }

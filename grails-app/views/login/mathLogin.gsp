@@ -94,9 +94,10 @@
         </g:if>
 
         <form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
+            <g:hiddenField name="questionId" value="${question.id}"/>
             <p>
                 <label for='questionGuess'>"${question.questionDisplay}":</label>
-                <input type='text' class='text_' name='j_guess' id='questionGuess'/>
+                <input type='text' class='text_' name='questionGuess' id='questionGuess'/>
             </p>
             <p>
                 <input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>

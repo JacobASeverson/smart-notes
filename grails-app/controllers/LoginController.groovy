@@ -122,7 +122,7 @@ class LoginController {
             render([error: msg] as JSON)
         } else {
             flash.message = msg
-            redirect action: 'auth', params: params
+            redirect action: 'mathLogin', params: params
         }
     }
 
