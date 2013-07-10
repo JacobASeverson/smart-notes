@@ -15,6 +15,13 @@ class MathAuthenticationProvider implements AuthenticationProvider,
     MathAuthenticatorService mathAuthenticatorService
     MessageSourceAccessor messages = SpringSecurityMessageSource.getAccessor()
 
+    /**
+     * Authenticates the application user and returns a populated
+     * Authentication object if successful.
+     * @param auth
+     * @return
+     * @throws AuthenticationException
+     */
     @Override
     Authentication authenticate(Authentication auth) throws AuthenticationException {
 
@@ -42,10 +49,17 @@ class MathAuthenticationProvider implements AuthenticationProvider,
         return authentication
     }
 
+    /**
+     * Tests whether this provider supports the Authentication
+     * type being passed in.
+     * @param authentication
+     * @return
+     */
     @Override
     boolean supports(Class<? extends Object> authentication) {
         return MathAuthenticationToken.class.isAssignableFrom(authentication)
     }
+
 
     @Override
     void setMessageSource(MessageSource messageSource) {

@@ -87,8 +87,8 @@ class MathAuthenticationFilter extends GenericFilterBean implements ApplicationE
     }
 
     /**
-     * Sets the Authentication object in the SpringSecurityContext and calls
-     * the AuthenticationSuccessHandler upon successful authentication.
+     * Puts the populated Authentication instance in the SecurityContextHolder
+     * at which point the user is authenticated.
      * @param request
      * @param response
      * @param authentication
@@ -108,8 +108,7 @@ class MathAuthenticationFilter extends GenericFilterBean implements ApplicationE
     }
 
     /**
-     * Clears the SecurityContextHolder and calls the AuthenticationFailureHandler
-     * upon unsuccessful authentication.
+     * Clears the SecurityContextHolder handles unsuccessful authentication.
      * @param request
      * @param response
      * @param failed
