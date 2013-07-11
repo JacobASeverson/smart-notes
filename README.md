@@ -6,4 +6,4 @@ to be a working guide to a blog post I wrote for the Object Partners blog http:/
 
 This program works as is, so feel free to download, try it out, or do whatever with it.
 
-If you have any comments or questions hit me up at jacoba.severson@gmail.com or @JacobASeverson.
+If you have any comments or questions hit me up at @JacobASeverson.
