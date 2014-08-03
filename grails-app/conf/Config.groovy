@@ -91,6 +91,17 @@ log4j = {
 }
 
 // Spring security properties:
-grails.plugins.springsecurity.authority.className = 'com.objectpartners.security.Role'
-grails.plugins.springsecurity.auth.loginFormUrl = '/login/mathLogin'
-grails.plugins.springsecurity.providerNames = ['mathAuthenticationProvider']
+grails.plugin.springsecurity.authority.className = 'com.objectpartners.security.Role'
+grails.plugin.springsecurity.auth.loginFormUrl = '/login/mathLogin'
+grails.plugin.springsecurity.providerNames = ['mathAuthenticationProvider']
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                              ['ROLE_USER'],
+	'/index':                         ['ROLE_USER'],
+	'/index.gsp':                     ['ROLE_USER'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
+]
