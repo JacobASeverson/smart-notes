@@ -17,3 +17,6 @@
 *.iws
 .DS_Store
 
+/.gradle
+/.slcache
+/build
