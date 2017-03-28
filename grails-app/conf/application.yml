@@ -14,6 +14,29 @@ grails:
             # Whether to translate GORM events into Reactor events
             # Disabled by default for performance reasons
             events: false
+    plugin:
+        springsecurity:
+            controllerAnnotations.staticRules:
+                - pattern: '/'
+                  access: ['ROLE_USER']
+                - pattern: '/index'
+                  access: ['ROLE_USER']
+                - pattern: '/index.gsp'
+                  access: ['ROLE_USER']
+                - pattern: '/error'
+                  access: ['permitAll']
+                - pattern: '/user/denied'
+                  access: ['permitAll']
+                - pattern: '/assets/**'
+                  access: ['permitAll']
+                - pattern: '/**/js/**'
+                  access: ['permitAll']
+                - pattern: '/**/css/**'
+                  access: ['permitAll']
+                - pattern: '/**/images/**'
+                  access: ['permitAll']
+                - pattern: '/**/favicon.ico'
+                  access: ['permitAll']
 info:
     app:
         name: '@info.app.name@'
